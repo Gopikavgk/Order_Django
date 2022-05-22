@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <style>
+        
+             body{
+                background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://p0.piqsels.com/preview/165/387/782/street-shops-shop-shopping.jpg');
+                background-position: center;
+                height: 100%;
+                background-size: cover;
+                background-repeat: no-repeat; 
+            }
+            #formdata{
+        margin-left: 12em;
+            }
+
+        </style>
+        <title>
+            Order Management Form
+        </title>
+     </head>
+    <body text="#ffffff">
+       
+        <h1>Order Management Form</h1>
+        <h2>{{flag}}</h2>
+        {% if flag %}
+        <script>alert("Data Added");
+        var url= document.location.href;
+        window.history.pushState({}, "", url.split("?")[0]);
+        </script>
+        
+        {% else %}
+        <h2>Enter Products</h2>
+        {% endif %}
+        <form id="formdata" action="savedborders">
+            <label for="product_name">Product Name:</label><br>
+            <input type="text" id="product_name" name="product_name" placeholder="Biscuit"><br><br>
+            <label for="product_price">Product Price:</label><br>
+            <input type="text" id="product_price" name="product_price" placeholder="100"><br><br>
+            <label for="product_quantity">Product quantity:</label><br>
+            <input type="text" id="product_quantity" name="product_quantity" placeholder="10"><br><br>
+            <label for="invoice_id">Invoice ID:</label><br>
+            <input type="text" id="invoice_id" name="invoice_id" placeholder="QWER123"><br><br>
+            <label for="user_name">User Name:</label><br>
+            <input type="text" id="user_name" name="user_name" placeholder="John"><br><br>
+            <label for="user_consumer">User Consumer:</label><br>
+            <input type="text" id="user_consumer" name="user_consumer" value="Consumer" readonly><br><br><br>
+            <input type="submit" value="Submit">
+          </form>
+    </body>
+    
+
+
+
+
+
+</html>
